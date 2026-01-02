@@ -1,11 +1,14 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
-import { NavLink as RouterNavLink, useLocation, Outlet } from 'react-router-dom';
-import { NAV_LINKS } from '../constants';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { NAV_LINKS } from '@/constants';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +21,9 @@ const Header: React.FC = () => {
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
+
+  const isActiveLink = (path: string) => pathname === path;
 
   return (
     <header 
@@ -28,7 +33,7 @@ const Header: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <RouterNavLink to="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="size-10 rounded-lg bg-primary text-white flex items-center justify-center group-hover:bg-primary-dark transition-colors">
             <span className="material-symbols-outlined text-2xl">package_2</span>
           </div>
@@ -36,33 +41,31 @@ const Header: React.FC = () => {
             <span className="text-xl font-bold tracking-tight text-secondary leading-none">Özcan</span>
             <span className="text-sm font-medium text-gray-500 tracking-wider">AMBALAJ</span>
           </div>
-        </RouterNavLink>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <RouterNavLink
+            <Link
               key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `text-sm font-semibold transition-colors ${
-                  isActive ? 'text-primary' : 'text-gray-600 hover:text-primary'
-                }`
-              }
+              href={link.path}
+              className={`text-sm font-semibold transition-colors ${
+                isActiveLink(link.path) ? 'text-primary' : 'text-gray-600 hover:text-primary'
+              }`}
             >
               {link.label}
-            </RouterNavLink>
+            </Link>
           ))}
         </nav>
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <RouterNavLink 
-            to="/iletisim"
+          <Link 
+            href="/iletisim"
             className="h-10 px-5 flex items-center justify-center rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-bold transition-colors shadow-sm shadow-blue-500/20"
           >
             Teklif Al
-          </RouterNavLink>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -78,24 +81,22 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg py-4 px-4 flex flex-col gap-4">
           {NAV_LINKS.map((link) => (
-            <RouterNavLink
+            <Link
               key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `text-base font-semibold py-2 px-2 rounded-md ${
-                  isActive ? 'bg-blue-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
-                }`
-              }
+              href={link.path}
+              className={`text-base font-semibold py-2 px-2 rounded-md ${
+                isActiveLink(link.path) ? 'bg-blue-50 text-primary' : 'text-gray-600 hover:bg-gray-50'
+              }`}
             >
               {link.label}
-            </RouterNavLink>
+            </Link>
           ))}
-          <RouterNavLink 
-            to="/iletisim"
+          <Link 
+            href="/iletisim"
             className="w-full h-12 flex items-center justify-center rounded-lg bg-primary text-white font-bold"
           >
             Teklif Al
-          </RouterNavLink>
+          </Link>
         </div>
       )}
     </header>
@@ -130,7 +131,7 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-white mb-6">Hızlı Erişim</h4>
             <div className="flex flex-col gap-3 text-sm">
               {NAV_LINKS.map(link => (
-                <RouterNavLink key={link.path} to={link.path} className="hover:text-primary transition-colors">{link.label}</RouterNavLink>
+                <Link key={link.path} href={link.path} className="hover:text-primary transition-colors">{link.label}</Link>
               ))}
             </div>
           </div>
@@ -178,12 +179,12 @@ const Footer: React.FC = () => {
   );
 };
 
-const Layout: React.FC = () => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <Outlet />
+        {children}
       </main>
       <Footer />
     </div>

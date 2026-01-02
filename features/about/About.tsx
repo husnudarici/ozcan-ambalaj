@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from '../../components/Section';
-import { TIMELINE } from '../../constants';
+import Section from '@/components/Section';
+import { TIMELINE } from '@/constants';
 
 const About: React.FC = () => {
   return (

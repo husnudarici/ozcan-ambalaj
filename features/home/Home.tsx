@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Section from '../../components/Section';
-import { STATS, PRODUCTS } from '../../constants';
+import Link from 'next/link';
+import Section from '@/components/Section';
+import { STATS, PRODUCTS } from '@/constants';
 
 const Home: React.FC = () => {
   const featuredProducts = PRODUCTS.slice(0, 4);
@@ -26,10 +26,10 @@ const Home: React.FC = () => {
                 1995'ten beri ambalaj sektöründe güven, kalite ve yenilik sunuyoruz. Özcan Ambalaj olarak her pakete değer katıyoruz.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link to="/urunler" className="flex items-center justify-center rounded-lg h-14 px-8 bg-primary hover:bg-primary-dark text-white text-lg font-bold shadow-lg shadow-blue-900/20 transition-all hover:scale-105">
+                <Link href="/urunler" className="flex items-center justify-center rounded-lg h-14 px-8 bg-primary hover:bg-primary-dark text-white text-lg font-bold shadow-lg shadow-blue-900/20 transition-all hover:scale-105">
                   Ürünleri Keşfet
                 </Link>
-                <Link to="/iletisim" className="flex items-center justify-center rounded-lg h-14 px-8 bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white text-lg font-bold transition-all">
+                <Link href="/iletisim" className="flex items-center justify-center rounded-lg h-14 px-8 bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white text-lg font-bold transition-all">
                   Bize Ulaşın
                 </Link>
               </div>
@@ -116,14 +116,14 @@ const Home: React.FC = () => {
             <h2 className="text-secondary text-3xl font-bold tracking-tight mb-2">Öne Çıkan Ürünlerimiz</h2>
             <p className="text-gray-600">Farklı sektörler için geliştirdiğimiz popüler ambalaj çözümleri.</p>
           </div>
-          <Link to="/urunler" className="text-primary hover:text-primary-dark font-bold inline-flex items-center gap-1 group">
+          <Link href="/urunler" className="text-primary hover:text-primary-dark font-bold inline-flex items-center gap-1 group">
             Tüm Ürünleri Gör 
             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
-             <Link key={product.id} to="/urunler" className="group flex flex-col gap-3">
+             <Link key={product.id} href="/urunler" className="group flex flex-col gap-3">
               <div className="w-full aspect-square rounded-xl bg-white border border-gray-200 overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
@@ -154,10 +154,10 @@ const Home: React.FC = () => {
               Özel ölçü, baskılı kutu veya standart koliler. İhtiyacınız ne olursa olsun, uzman ekibimiz size yardımcı olmaya hazır.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/iletisim" className="flex items-center justify-center rounded-lg h-14 px-10 bg-white text-primary text-lg font-bold hover:bg-gray-50 transition-colors shadow-lg">
+              <Link href="/iletisim" className="flex items-center justify-center rounded-lg h-14 px-10 bg-white text-primary text-lg font-bold hover:bg-gray-50 transition-colors shadow-lg">
                 İletişime Geç
               </Link>
-              <Link to="/urunler" className="flex items-center justify-center rounded-lg h-14 px-10 bg-blue-800/40 text-white border border-white/20 text-lg font-bold hover:bg-blue-800/60 transition-colors backdrop-blur-sm">
+              <Link href="/urunler" className="flex items-center justify-center rounded-lg h-14 px-10 bg-blue-800/40 text-white border border-white/20 text-lg font-bold hover:bg-blue-800/60 transition-colors backdrop-blur-sm">
                 Ürünleri İncele
               </Link>
             </div>

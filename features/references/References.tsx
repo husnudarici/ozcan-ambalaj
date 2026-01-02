@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from '../../components/Section';
-import { TESTIMONIALS } from '../../constants';
+import Section from '@/components/Section';
+import { TESTIMONIALS } from '@/constants';
 
 const References: React.FC = () => {
   return (

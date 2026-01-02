@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import Section from '../../components/Section';
+import Section from '@/components/Section';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -42,9 +44,9 @@ const Contact: React.FC = () => {
       }
     };
 
-    const SERVICE_ID = getEnvVar('REACT_APP_EMAILJS_SERVICE_ID', 'service_u7on7jd');
-    const TEMPLATE_ID = getEnvVar('REACT_APP_EMAILJS_TEMPLATE_ID', 'template_hvvgprn');
-    const PUBLIC_KEY = getEnvVar('REACT_APP_EMAILJS_PUBLIC_KEY', '-CiBTixg541TfiRaG');
+    const SERVICE_ID = getEnvVar('NEXT_PUBLIC_EMAILJS_SERVICE_ID', 'service_u7on7jd');
+    const TEMPLATE_ID = getEnvVar('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID', 'template_hvvgprn');
+    const PUBLIC_KEY = getEnvVar('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY', '-CiBTixg541TfiRaG');
 
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
       console.error('EmailJS konfigürasyonları bulunamadı.');

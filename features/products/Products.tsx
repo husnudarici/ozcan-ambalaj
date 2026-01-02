@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState } from 'react';
-import Section from '../../components/Section';
-import { PRODUCTS } from '../../constants';
-import { Product } from '../../types';
+import Section from '@/components/Section';
+import { PRODUCTS } from '@/constants';
+import { Product } from '@/types';
 
 const Products: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Tümü');
