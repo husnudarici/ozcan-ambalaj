@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   description: "Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, özel tasarım kutular ve endüstriyel ambalaj hizmetleri.",
   keywords: "ambalaj, kutu, koli, oluklu mukavva, istanbul ambalaj, özel kutu üretimi",
   authors: [{ name: "Özcan Ambalaj" }],
+  icons: {
+    icon: [
+      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   robots: {
     index: true,
     follow: true,
@@ -27,7 +38,7 @@ export const metadata: Metadata = {
     url: 'https://www.ozcanambalaj.com',
     siteName: 'Özcan Ambalaj',
     title: 'Özcan Ambalaj - Profesyonel Kutu ve Ambalaj Çözümleri',
-    description: 'Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, özel tasarım kutular ve endüstriyel ambalaj hizmetleri.',
+    description: 'Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, ösel tasarım kutular ve endüstriyel ambalaj hizmetleri.',
     images: [
       {
         url: '/og-image.jpg',
