@@ -1,5 +1,5 @@
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Layout from "@/components/Layout";
 import "./globals.css";
 
@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: "Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, özel tasarım kutular ve endüstriyel ambalaj hizmetleri.",
   keywords: "ambalaj, kutu, koli, oluklu mukavva, istanbul ambalaj, özel kutu üretimi",
   authors: [{ name: "Özcan Ambalaj" }],
+};
+
+export const viewport: Viewport = {
   themeColor: "#137fec",
 };
 

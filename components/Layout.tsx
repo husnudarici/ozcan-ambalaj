@@ -153,22 +153,22 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-4 text-sm">
               <div className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-primary shrink-0">location_on</span>
-                <span>Organize Sanayi Bölgesi, 4. Cadde No:12, Bursa</span>
+                <span>A-1 Caddesi 2705 Sk. No:3 Habibler Sultangazi, İstanbul</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary shrink-0">call</span>
-                <span>+90 224 123 45 67</span>
+                <span>+90 546 975 48 99</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary shrink-0">mail</span>
-                <span>info@ozcanambalaj.com.tr</span>
+                <span>info@ozcanambalaj.com</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <p>© 2024 Özcan Ambalaj San. Tic. Ltd. Şti. Tüm hakları saklıdır.</p>
+          <p>© 2026 Özcan Ambalaj San. Tic. Ltd. Şti. Tüm hakları saklıdır.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
             <a href="#" className="hover:text-white transition-colors">Kullanım Koşulları</a>

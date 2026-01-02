@@ -72,8 +72,8 @@ const Contact: React.FC = () => {
           {/* Info Side */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             {[
-              { title: 'Adres', content: 'Organize Sanayi Bölgesi, 4. Cadde, No: 12, İstanbul', icon: 'location_on' },
-              { title: 'Telefon', content: '+90 212 555 0123', icon: 'call' },
+              { title: 'Adres', content: 'A-1 Caddesi 2705 Sk. No:3 Habibler Sultangazi, İstanbul', icon: 'location_on' },
+              { title: 'Telefon', content: '+90 546 975 48 99', icon: 'call' },
               { title: 'E-posta', content: 'info@ozcanambalaj.com', icon: 'mail' }
             ].map((item, idx) => (
               <div key={idx} className="flex gap-4 p-6 rounded-xl bg-surface-light border border-gray-100 shadow-sm">
