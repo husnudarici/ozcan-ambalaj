@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NAV_LINKS } from '@/constants';
 
@@ -28,19 +29,20 @@ const Header: React.FC = () => {
   return (
     <header 
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-white py-5 border-b border-gray-100'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-white py-3 border-b border-gray-100'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="size-10 rounded-lg bg-primary text-white flex items-center justify-center group-hover:bg-primary-dark transition-colors">
-            <span className="material-symbols-outlined text-2xl">package_2</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-secondary leading-none">Özcan</span>
-            <span className="text-sm font-medium text-gray-500 tracking-wider">AMBALAJ</span>
-          </div>
+          <Image
+            src="/images/logo.svg"
+            alt="Özcan Ambalaj Logo"
+            width={150}
+            height={48}
+            className="h-12 w-auto transition-opacity group-hover:opacity-80"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -111,8 +113,13 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2 text-white">
-               <span className="material-symbols-outlined text-primary text-3xl">package_2</span>
-               <span className="text-xl font-bold">Özcan Ambalaj</span>
+               <Image
+                 src="/images/logo.svg"
+                 alt="Özcan Ambalaj Logo"
+                 width={125}
+                 height={40}
+                 className="h-10 w-auto"
+               />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Kaliteli ambalaj çözümleriyle ürünlerinizi koruyor, markanıza değer katıyoruz. 25 yılı aşkın tecrübe.
