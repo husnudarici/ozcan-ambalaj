@@ -89,7 +89,7 @@ const Home: React.FC = () => {
       {/* Features Grid */}
       <Section className="bg-white">
         <div className="flex flex-col md:flex-row gap-12 items-start">
-          <div className="flex flex-col gap-6 md:w-1/3 sticky top-24">
+          <div className="flex flex-col gap-6 md:w-1/3 top-24">
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit">
               <span className="w-2 h-2 rounded-full bg-primary"></span>
               <span className="text-primary text-xs font-bold uppercase tracking-wide">Kalite Standartları</span>
