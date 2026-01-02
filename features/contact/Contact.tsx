@@ -14,8 +14,6 @@ const Contact: React.FC = () => {
     
     if (!form.current) return;
 
-    // 1. Form verilerini state güncellemesinden ÖNCE alıyoruz.
-    // Çünkü setIsSubmitting(true) olduğunda inputlar 'disabled' olur ve veri gönderilmez.
     const formData = new FormData(form.current);
     
     const templateParams = {
@@ -24,29 +22,15 @@ const Contact: React.FC = () => {
         user_phone: formData.get('user_phone'),
         subject: formData.get('subject'),
         message: formData.get('message'),
-        reply_to: formData.get('user_email'), // EmailJS'de yanıtla özelliği için
+        reply_to: formData.get('user_email'),
     };
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Güvenli değişken alma fonksiyonu
-    const getEnvVar = (key: string, fallback: string) => {
-      try {
-        // @ts-ignore
-        if (typeof process !== 'undefined' && process.env && process.env[key]) {
-          // @ts-ignore
-          return process.env[key];
-        }
-        return fallback;
-      } catch (e) {
-        return fallback;
-      }
-    };
-
-    const SERVICE_ID = getEnvVar('NEXT_PUBLIC_EMAILJS_SERVICE_ID', 'service_u7on7jd');
-    const TEMPLATE_ID = getEnvVar('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID', 'template_hvvgprn');
-    const PUBLIC_KEY = getEnvVar('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY', '-CiBTixg541TfiRaG');
+    const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
       console.error('EmailJS konfigürasyonları bulunamadı.');
