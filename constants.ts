@@ -21,7 +21,7 @@ export const PRODUCTS: Product[] = [
     title: 'Standart A-Box',
     category: 'Standart',
     description: 'En yaygın taşıma ve depolama kolileri. Dayanıklı yapısıyla lojistik süreçlerinizi güvene alır.',
-    image: 'https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1586769852044-692d6e3703f0?q=80&w=800&auto=format&fit=crop',
     minOrder: '100 Adet',
     tag: 'Stokta',
     tagColor: 'blue'
@@ -31,7 +31,7 @@ export const PRODUCTS: Product[] = [
     title: 'Özel Kesimli Kutu',
     category: 'Kesimli',
     description: 'Ürününüzün şekline tam uyum sağlayan, bıçaklı kalıplarla üretilen özel tasarım kutular.',
-    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1632514931326-7784b2518e38?q=80&w=800&auto=format&fit=crop',
     minOrder: 'Özel Sipariş',
     tag: 'Özel Tasarım',
     tagColor: 'purple'
@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
     title: 'Pizza ve Gıda Kutusu',
     category: 'Gıda',
     description: 'Gıda ile temasa uygun, ısıyı koruyan ve baskıya uygun materyalden üretilen servis kutuları.',
-    image: 'https://images.unsplash.com/photo-1593560708920-63984be3683f?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1595240366838-8c6328b939d8?q=80&w=800&auto=format&fit=crop',
     minOrder: '500 Adet',
     tag: 'Gıda Sertifikalı',
     tagColor: 'green'
@@ -51,7 +51,7 @@ export const PRODUCTS: Product[] = [
     title: 'E-Ticaret Kutuları',
     category: 'E-Ticaret',
     description: 'Kargo sürecinde ürünlerinizi koruyan, kolay kurulumlu ve marka baskılı gönderi kutuları.',
-    image: 'https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1629026707321-d83042457c3d?q=80&w=800&auto=format&fit=crop',
     minOrder: '200 Adet',
     tag: 'Popüler',
     tagColor: 'orange'
@@ -61,7 +61,7 @@ export const PRODUCTS: Product[] = [
     title: 'Ağır Hizmet Kolisi',
     category: 'Endüstriyel',
     description: 'İhracat ve ağır sanayi yükleri için triplex (üç dalga) mukavvadan üretilen ekstra sağlam koliler.',
-    image: 'https://images.unsplash.com/photo-1507612440448-3a1b36db3d50?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=800&auto=format&fit=crop',
     minOrder: '50 Adet',
     tag: 'Triplex',
     tagColor: 'red'
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
     title: 'Ofset Baskılı Kutu',
     category: 'Ofset',
     description: 'Yüksek çözünürlüklü baskı kalitesiyle ürününüzün rafta dikkat çekmesini sağlayan lamine kutular.',
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1628135804791-d85c2c776077?q=80&w=800&auto=format&fit=crop',
     minOrder: 'Özel Sipariş',
     tag: 'Lamine',
     tagColor: 'yellow'

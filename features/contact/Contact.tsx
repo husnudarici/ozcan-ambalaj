@@ -12,30 +12,54 @@ const Contact: React.FC = () => {
     
     if (!form.current) return;
 
+    // 1. Form verilerini state güncellemesinden ÖNCE alıyoruz.
+    // Çünkü setIsSubmitting(true) olduğunda inputlar 'disabled' olur ve veri gönderilmez.
+    const formData = new FormData(form.current);
+    
+    const templateParams = {
+        user_name: formData.get('user_name'),
+        user_email: formData.get('user_email'),
+        user_phone: formData.get('user_phone'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        reply_to: formData.get('user_email'), // EmailJS'de yanıtla özelliği için
+    };
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Ortam değişkenlerinden değerleri al
-    const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    // Güvenli değişken alma fonksiyonu
+    const getEnvVar = (key: string, fallback: string) => {
+      try {
+        // @ts-ignore
+        if (typeof process !== 'undefined' && process.env && process.env[key]) {
+          // @ts-ignore
+          return process.env[key];
+        }
+        return fallback;
+      } catch (e) {
+        return fallback;
+      }
+    };
+
+    const SERVICE_ID = getEnvVar('REACT_APP_EMAILJS_SERVICE_ID', 'service_u7on7jd');
+    const TEMPLATE_ID = getEnvVar('REACT_APP_EMAILJS_TEMPLATE_ID', 'template_hvvgprn');
+    const PUBLIC_KEY = getEnvVar('REACT_APP_EMAILJS_PUBLIC_KEY', '-CiBTixg541TfiRaG');
 
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      console.error('EmailJS konfigürasyonları .env dosyasında bulunamadı.');
+      console.error('EmailJS konfigürasyonları bulunamadı.');
       setSubmitStatus('error');
       setIsSubmitting(false);
       return;
     }
 
+    // sendForm yerine send kullanıyoruz, böylece veriyi manuel olarak garanti altına alıyoruz
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
-        publicKey: PUBLIC_KEY,
-      })
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then(
         () => {
           setSubmitStatus('success');
           if (form.current) form.current.reset();
-          // 5 saniye sonra başarı mesajını kaldır
           setTimeout(() => setSubmitStatus('idle'), 5000);
         },
         (error) => {

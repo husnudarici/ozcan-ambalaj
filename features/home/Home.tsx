@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           <div 
             className="relative rounded-3xl overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center bg-cover bg-center shadow-2xl"
             style={{ 
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566576912902-6b6c63cf271d?q=80&w=1920&auto=format&fit=crop')` 
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=1920&auto=format&fit=crop')` 
             }}
           >
             <div className="relative z-10 w-full max-w-4xl px-8 md:px-16 flex flex-col gap-6">
