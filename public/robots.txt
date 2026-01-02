@@ -1,0 +1,15 @@
+# Özcan Ambalaj - Robots.txt
+# https://www.ozcanambalaj.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ozcanambalaj.com/sitemap.xml
+
+# Disallow admin or private paths (if any in future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Crawl-delay (optional, if needed)
+# Crawl-delay: 1

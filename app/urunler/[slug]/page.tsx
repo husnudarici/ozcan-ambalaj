@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import { PRODUCT_CATALOG, getProductBySlug } from "@/data/products";
+import { ProductSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 type PageProps = {
   params: { slug: string };
@@ -28,11 +30,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: product.seo.title,
     description: product.seo.description,
     keywords: product.seo.keywords,
+    alternates: {
+      canonical: `https://www.ozcanambalaj.com/urunler/${params.slug}`,
+    },
     openGraph: {
       title: product.seo.title,
       description: product.seo.description,
-      images: [{ url: product.image, alt: product.title }],
+      images: [{ url: product.image, alt: product.title, width: 1200, height: 630 }],
+      url: `https://www.ozcanambalaj.com/urunler/${params.slug}`,
       type: "website",
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: product.seo.title,
+      description: product.seo.description,
+      images: [product.image],
     },
   };
 }
@@ -54,8 +66,23 @@ export default function ProductDetailPage({ params }: PageProps) {
     gray: "bg-gray-100 text-gray-700",
   };
 
+  const breadcrumbItems = [
+    { name: 'Ana Sayfa', url: 'https://www.ozcanambalaj.com' },
+    { name: 'Ürünler', url: 'https://www.ozcanambalaj.com/urunler' },
+    { name: product.title, url: `https://www.ozcanambalaj.com/urunler/${params.slug}` }
+  ];
+
   return (
     <>
+      <ProductSchema
+        name={product.title}
+        description={product.overview}
+        image={product.image}
+        url={`https://www.ozcanambalaj.com/urunler/${params.slug}`}
+        category={product.category}
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <div className="bg-secondary text-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <Link href="/urunler" className="text-sm text-gray-300 hover:text-white">
@@ -103,11 +130,13 @@ export default function ProductDetailPage({ params }: PageProps) {
               </p>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-gray-100">
-            <img
+          <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-gray-100 aspect-square">
+            <Image
               src={product.image}
               alt={product.title}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
             />
           </div>
         </div>

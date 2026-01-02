@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Section from "@/components/Section";
 import { PRODUCT_CATALOG } from "@/data/products";
 
@@ -73,10 +74,12 @@ const Products: React.FC = () => {
               className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {product.tag && (
                   <div

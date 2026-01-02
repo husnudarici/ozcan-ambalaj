@@ -1,13 +1,48 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
 import Layout from "@/components/Layout";
+import { OrganizationSchema, WebSiteSchema } from "@/components/SchemaMarkup";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.ozcanambalaj.com'),
   title: "Özcan Ambalaj - Profesyonel Kutu ve Ambalaj Çözümleri",
   description: "Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, özel tasarım kutular ve endüstriyel ambalaj hizmetleri.",
   keywords: "ambalaj, kutu, koli, oluklu mukavva, istanbul ambalaj, özel kutu üretimi",
   authors: [{ name: "Özcan Ambalaj" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'tr_TR',
+    url: 'https://www.ozcanambalaj.com',
+    siteName: 'Özcan Ambalaj',
+    title: 'Özcan Ambalaj - Profesyonel Kutu ve Ambalaj Çözümleri',
+    description: 'Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, özel tasarım kutular ve endüstriyel ambalaj hizmetleri.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Özcan Ambalaj - Profesyonel Kutu ve Ambalaj Çözümleri',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Özcan Ambalaj - Profesyonel Kutu ve Ambalaj Çözümleri',
+    description: 'Özcan Ambalaj - Profesyonel kutu ve ambalaj çözümleri. Oluklu mukavva, özel tasarım kutular ve endüstriyel ambalaj hizmetleri.',
+    images: ['/og-image.jpg'],
+  },
 };
 
 export const viewport: Viewport = {
@@ -31,6 +66,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body>
+        <OrganizationSchema />
+        <WebSiteSchema />
         <Layout>{children}</Layout>
       </body>
     </html>

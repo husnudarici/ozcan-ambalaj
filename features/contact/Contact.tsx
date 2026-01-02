@@ -89,15 +89,12 @@ const Contact: React.FC = () => {
             
             {/* Map Placeholder */}
             <div className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden relative border border-gray-200 mt-4 group">
-               <div 
-                 className="absolute inset-0 bg-cover bg-center" 
-                 style={{ backgroundImage: `url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=1000&auto=format&fit=crop')` }}
-               ></div>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.069464994412!2d28.836884676533376!3d41.13300951173435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caae125fac3fe5%3A0x336df177e93876b9!2sHabibler%2C%202705.%20Sk.%20No%3A3%2C%2034270%20Sultangazi%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1767388157104!5m2!1str!2str" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="bg-white text-secondary px-4 py-2 rounded-lg font-bold shadow-lg flex items-center gap-2">
+                  <a href="https://www.google.com/maps/place/Habibler,+2705.+Sk.+No:3,+34270+Sultangazi%2F%C4%B0stanbul/@41.1330095,28.8368847,17z/data=!3m1!4b1!4m6!3m5!1s0x14caae125fac3fe5:0x336df177e93876b9!8m2!3d41.1330055!4d28.8394596!16s%2Fg%2F11jr6dp4yx?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="bg-white text-secondary px-4 py-2 rounded-lg font-bold shadow-lg flex items-center gap-2">
                     <span className="material-symbols-outlined text-primary">map</span>
                     Haritada Gör
-                  </button>
+                  </a>
                </div>
             </div>
           </div>

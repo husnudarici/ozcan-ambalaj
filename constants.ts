@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const TIMELINE: TimelineItem[] = [
-  { year: '1995', title: 'İlk Adım', description: 'Bursa\'da küçük bir atölyede oluklu mukavva üretimine başladık. İlk makinemiz ve 5 çalışanımızla yola çıktık.', tag: 'Kuruluş' },
+  { year: '1995', title: 'İlk Adım', description: 'Sultangazi İstanbul\'da küçük bir atölyede oluklu mukavva üretimine başladık. İlk makinemiz ve 5 çalışanımızla yola çıktık.', tag: 'Kuruluş' },
   { year: '2005', title: 'Fabrika Yatırımı', description: 'Artan talep üzerine 5.000 m²\'lik ilk modern fabrikamıza taşındık. Üretim kapasitemizi 10 katına çıkardık.', tag: 'Büyüme' },
   { year: '2015', title: 'Dünyaya Açılma', description: 'Avrupa pazarına ilk ihracatımızı gerçekleştirdik. Kalite standartlarımızı uluslararası sertifikalarla belgeledik.', tag: 'İhracat' },
   { year: '2023', title: 'Yeşil Enerji', description: 'Fabrika çatımıza kurduğumuz güneş enerjisi santrali ile enerji ihtiyacımızın %80\'ini yenilenebilir kaynaklardan sağlıyoruz.', tag: 'Gelecek' },

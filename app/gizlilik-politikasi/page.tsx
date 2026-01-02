@@ -5,6 +5,20 @@ export const metadata: Metadata = {
   title: "Gizlilik Politikası | Özcan Ambalaj",
   description:
     "Özcan Ambalaj gizlilik politikası ve kişisel veri kullanımı hakkında bilgilendirme.",
+  alternates: {
+    canonical: 'https://www.ozcanambalaj.com/gizlilik-politikasi',
+  },
+  openGraph: {
+    title: 'Gizlilik Politikası | Özcan Ambalaj',
+    description: 'Özcan Ambalaj gizlilik politikası ve kişisel veri kullanımı hakkında bilgilendirme.',
+    url: 'https://www.ozcanambalaj.com/gizlilik-politikasi',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Gizlilik Politikası | Özcan Ambalaj',
+    description: 'Özcan Ambalaj gizlilik politikası ve kişisel veri kullanımı hakkında bilgilendirme.',
+  },
 };
 
 export default function PrivacyPolicyPage() {

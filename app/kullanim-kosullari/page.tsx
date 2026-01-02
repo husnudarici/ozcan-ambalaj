@@ -5,6 +5,20 @@ export const metadata: Metadata = {
   title: "Kullanım Koşulları | Özcan Ambalaj",
   description:
     "Özcan Ambalaj web sitesi kullanım koşulları ve genel bilgilendirme.",
+  alternates: {
+    canonical: 'https://www.ozcanambalaj.com/kullanim-kosullari',
+  },
+  openGraph: {
+    title: 'Kullanım Koşulları | Özcan Ambalaj',
+    description: 'Özcan Ambalaj web sitesi kullanım koşulları ve genel bilgilendirme.',
+    url: 'https://www.ozcanambalaj.com/kullanim-kosullari',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Kullanım Koşulları | Özcan Ambalaj',
+    description: 'Özcan Ambalaj web sitesi kullanım koşulları ve genel bilgilendirme.',
+  },
 };
 
 export default function TermsPage() {

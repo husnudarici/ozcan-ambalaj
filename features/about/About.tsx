@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Section from '@/components/Section';
 import { TIMELINE } from '@/constants';
 
@@ -20,10 +21,12 @@ const About: React.FC = () => {
       <Section className="bg-white">
          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden h-[450px] shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
-               <img 
-                 src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1000&auto=format&fit=crop" 
-                 alt="Texture" 
-                 className="w-full h-full object-cover"
+               <Image
+                 src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1000&auto=format&fit=crop"
+                 alt="Texture"
+                 fill
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 className="object-cover"
                />
                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
                   <div>
