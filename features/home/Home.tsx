@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Section from '@/components/Section';
 import { STATS } from '@/constants';
 import { PRODUCT_CATALOG } from '@/data/products';
@@ -142,11 +143,15 @@ const Home: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
              <Link key={product.slug} href={`/urunler/${product.slug}`} className="group flex flex-col gap-3">
-              <div className="w-full aspect-square rounded-xl bg-white border border-gray-200 overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
-                  style={{ backgroundImage: `url('${product.image}')` }}
-                ></div>
+              <div className="w-full h-[300px] aspect-square rounded-xl bg-white border border-gray-200 overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={400}
+                  height={400}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="h-full w-full object-cover"
+                />
                 {product.tag && (
                   <div className={`absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded bg-white/90 backdrop-blur-sm shadow-sm ${tagTextStyles[product.tagColor || "blue"]}`}>
                     {product.tag}
