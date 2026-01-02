@@ -1,0 +1,8 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/hakkimizda/page": "app/hakkimizda/page.js",
+  "/iletisim/page": "app/iletisim/page.js",
+  "/urunler/page": "app/urunler/page.js",
+  "/page": "app/page.js",
+  "/referanslar/page": "app/referanslar/page.js"
+}
