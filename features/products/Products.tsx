@@ -35,7 +35,7 @@ const Products: React.FC = () => {
         <p className="text-gray-400">Her sektöre uygun kaliteli ambalaj çözümleri</p>
       </div>
 
-      <div className="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200 py-4">
+      <div className="sticky top-16 z-40 bg-white/90 backdrop-blur-md border-b border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-4 overflow-x-auto pb-2 -mb-2 scrollbar-hide">
           <div className="flex gap-3">
             {categories.map((category) => (
