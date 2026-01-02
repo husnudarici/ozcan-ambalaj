@@ -27,8 +27,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Toplu dağıtımlar için dayanıklı, hijyenik ve ekonomik oluklu mukavva kumanya kolisi.",
     overview:
       "Sultangazi İstanbul'da ürettiğimiz kumanya kolileri, sosyal yardım ve kurumsal dağıtımlarda güvenli ambalaj çözümü sunar. Oluklu mukavva yapısı sayesinde koli taşıma sırasında ürünler korunur, kutu formu hızlı kurulum ve istifleme kolaylığı sağlar.",
-    image:
-      "https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/kumanya-kolisi.jpg",
     minOrder: "100 Adet",
     tag: "Sosyal Destek",
     tagColor: "green",
@@ -78,8 +77,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Lojistik süreçlerde darbe dayanımı yüksek, güvenli taşıma kolisi.",
     overview:
       "Sultangazi İstanbul'daki üretimimizden çıkan taşıma kolileri, ürünlerinizi sevkiyat boyunca korur. Oluklu mukavva yapısı sayesinde koli, kutu ve ambalaj ihtiyaçlarında sağlamlık ve ekonomik denge sağlar.",
-    image:
-      "https://images.unsplash.com/photo-1730154838368-c37b1fdebcf6?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/tasima-kolisi.jpg",
     minOrder: "100 Adet",
     tag: "Lojistik",
     tagColor: "blue",
@@ -129,8 +127,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Marka görünürlüğü için logo ve iletişim bilgisi baskılı koli çözümleri.",
     overview:
       "Sultangazi İstanbul'da baskılı koli üretimi ile ambalaj, koli ve kutu süreçlerinizi markalı hale getiriyoruz. Oluklu mukavva üzerinde net ve dayanıklı baskı ile kurumsal kimliğiniz sevkiyatta da görünür olur.",
-    image:
-      "https://images.unsplash.com/photo-1667314614945-23d667783bb4?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/baskili-koli.jpg",
     minOrder: "200 Adet",
     tag: "Markalı",
     tagColor: "orange",
@@ -180,8 +177,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Dosya ve evrak düzeni için kapaklı, istiflenebilir arşiv kolisi.",
     overview:
       "Sultangazi İstanbul üretimi arşiv kolileri, ofis ve kurumlarda evrak düzenini sağlar. Oluklu mukavva yapısı sayesinde koli sağlam kalır, kutu formu ile depolama alanında kolay istiflenir.",
-    image:
-      "https://images.unsplash.com/photo-1743207820696-6ea16d63177f?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/arsiv-koli.jpg",
     minOrder: "100 Adet",
     tag: "Düzen",
     tagColor: "purple",
@@ -231,8 +227,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Ekonomik ve hızlı tedarik için standart baskısız koli seçenekleri.",
     overview:
       "Sultangazi İstanbul'da baskısız koli üretimi ile hızlı ve ekonomik ambalaj çözümleri sağlıyoruz. Oluklu mukavva koli ve kutu seçenekleri, stok ve sevkiyat süreçlerinde ideal bir temel çözüm sunar.",
-    image:
-      "https://images.unsplash.com/photo-1573376671096-e1fce2d1f19d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/baskisiz-koli.jpg",
     minOrder: "50 Adet",
     tag: "Ekonomik",
     tagColor: "blue",
@@ -282,8 +277,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Ağır yükler için güçlendirilmiş, kitap taşımaya uygun koli.",
     overview:
       "Sultangazi İstanbul'da üretilen kitap kolileri, ağır ve hassas içeriklerde güvenli ambalaj sağlar. Oluklu mukavva gövde, koli ve kutu formunda kitapların köşe ve sırtlarını korur.",
-    image:
-      "https://images.unsplash.com/photo-1577702312572-5bb9328a9f15?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/kitap-kolisi.jpg",
     minOrder: "100 Adet",
     tag: "Dayanım",
     tagColor: "red",
@@ -333,8 +327,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Ürüne özel kalıp ile üretilen, dikkat çekici kesimli kutu çözümleri.",
     overview:
       "Sultangazi İstanbul'da kesimli kutu üretimi ile ürünlerinize tam uyumlu ambalaj tasarlarız. Oluklu mukavva ve karton seçenekleriyle kutu, koli ve ambalaj ihtiyaçlarınıza özel kesim çözümler sunarız.",
-    image:
-      "https://images.unsplash.com/photo-1686632800715-b705ba1b0eb6?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/kesimli-kutu.jpg",
     minOrder: "500 Adet",
     tag: "Özel Kesim",
     tagColor: "orange",
@@ -384,8 +377,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Gıdaya uygun, sıcaklığı koruyan ve yağ bariyeri olan pizza kutusu.",
     overview:
       "Sultangazi İstanbul'da pizza kutusu üretimi ile gıda ambalajı ihtiyaçlarını karşılıyoruz. Oluklu mukavva ve gıdaya uygun karton seçenekleriyle kutu formu sıcaklığı korur, taşıma sırasında ürün bütünlüğünü sağlar.",
-    image:
-      "https://images.unsplash.com/photo-1605960224189-e0010ea15ca0?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/pizza-kutusu.jpg",
     minOrder: "500 Adet",
     tag: "Gıda",
     tagColor: "green",
@@ -435,8 +427,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Otomatik tabanlı, hızlı kurulumlu dipkilit kutu çözümleri.",
     overview:
       "Sultangazi İstanbul'da dipkilit kutu üretimi ile pratik ve sağlam ambalaj çözümleri sunuyoruz. Oluklu mukavva ve karton yapısı sayesinde kutu, koli ve ambalaj süreçlerinde hız ve dayanım sağlar.",
-    image:
-      "https://images.unsplash.com/photo-1680337674070-27a748bd82c1?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/dipkilit-kutu.jpg",
     minOrder: "500 Adet",
     tag: "Hızlı Kurulum",
     tagColor: "blue",
@@ -486,8 +477,7 @@ export const PRODUCT_CATALOG: ProductDetail[] = [
       "Küçük ürünlerde premium sunum sağlayan aksesuar kutusu.",
     overview:
       "Sultangazi İstanbul'da aksesuar kutusu üretimi ile ürünlerinize premium bir ambalaj sunuyoruz. Oluklu mukavva ve karton seçenekleriyle kutu, koli ve ambalaj ihtiyaçlarında şık ve güvenli çözümler sağlarız.",
-    image:
-      "https://images.unsplash.com/photo-1680200256120-8ac04eb6f01d?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/aksesuar-kutusu.jpg",
     minOrder: "500 Adet",
     tag: "Premium",
     tagColor: "purple",

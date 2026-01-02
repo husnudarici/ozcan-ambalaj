@@ -19,7 +19,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
   const lastModified = new Date();
 
-  const staticRoutes = ["", "/hakkimizda", "/urunler", "/referanslar", "/iletisim"];
+  const staticRoutes = [
+    "",
+    "/hakkimizda",
+    "/urunler",
+    "/referanslar",
+    "/iletisim",
+    "/gizlilik-politikasi",
+    "/kullanim-kosullari",
+  ];
 
   const staticEntries = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,

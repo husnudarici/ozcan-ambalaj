@@ -118,11 +118,31 @@ const Footer: React.FC = () => {
               Kaliteli ambalaj çözümleriyle ürünlerinizi koruyor, markanıza değer katıyoruz. 25 yılı aşkın tecrübe.
             </p>
             <div className="flex gap-4 mt-2">
-              {['public', 'share', 'mail'].map((icon) => (
-                <a key={icon} href="#" className="size-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                   <span className="material-symbols-outlined text-sm">{icon}</span>
-                </a>
-              ))}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=A-1%20Caddesi%202705%20Sk.%20No%3A3%20Habibler%20Sultangazi%20Istanbul"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Haritada gor"
+                className="size-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="material-symbols-outlined text-sm">public</span>
+              </a>
+              <a
+                href="https://wa.me/905469754899"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                className="size-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="material-symbols-outlined text-sm">share</span>
+              </a>
+              <a
+                href="mailto:info@ozcanambalaj.com"
+                aria-label="E-posta"
+                className="size-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <span className="material-symbols-outlined text-sm">mail</span>
+              </a>
             </div>
           </div>
 
@@ -136,14 +156,14 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Services */}
+                    {/* Services */}
           <div>
             <h4 className="font-bold text-white mb-6">Hizmetler</h4>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="#" className="hover:text-primary transition-colors">Özel Kesim Kutu</a>
-              <a href="#" className="hover:text-primary transition-colors">Ofset Baskı</a>
-              <a href="#" className="hover:text-primary transition-colors">Laminasyon</a>
-              <a href="#" className="hover:text-primary transition-colors">Prototip Üretim</a>
+              <Link href="/urunler/kesimli-kutu" className="hover:text-primary transition-colors">Özel Kesim Kutu</Link>
+              <Link href="/urunler/baskili-koli" className="hover:text-primary transition-colors">Baskılı Koli</Link>
+              <Link href="/urunler/pizza-kutusu" className="hover:text-primary transition-colors">Pizza Kutusu</Link>
+              <Link href="/urunler/tasima-kolisi" className="hover:text-primary transition-colors">Taşıma Kolisi</Link>
             </div>
           </div>
 
@@ -169,9 +189,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>© 2026 Özcan Ambalaj San. Tic. Ltd. Şti. Tüm hakları saklıdır.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Gizlilik Politikası</a>
-            <a href="#" className="hover:text-white transition-colors">Kullanım Koşulları</a>
+                    <div className="flex gap-6">
+            <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">Gizlilik Politikası</Link>
+            <Link href="/kullanim-kosullari" className="hover:text-white transition-colors">Kullanım Koşulları</Link>
           </div>
         </div>
       </div>
