@@ -18,6 +18,7 @@ const getBaseUrl = () => {
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
   const lastModified = new Date();
+  type SitemapEntry = MetadataRoute.Sitemap[number];
 
   const staticRoutes = [
     "",
@@ -29,14 +30,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kullanim-kosullari",
   ];
 
-  const staticEntries = staticRoutes.map((route) => ({
+  const staticEntries: SitemapEntry[] = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified,
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.8,
   }));
 
-  const productEntries = PRODUCT_CATALOG.map((product) => ({
+  const productEntries: SitemapEntry[] = PRODUCT_CATALOG.map((product) => ({
     url: `${baseUrl}/urunler/${product.slug}`,
     lastModified,
     changeFrequency: "monthly",
