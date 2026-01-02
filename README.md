@@ -2,8 +2,6 @@
 
 Bu proje, **Özcan Ambalaj** firması için geliştirilmiş; modern, hızlı ve SEO uyumlu bir kurumsal web sitesidir. **Next.js (App Router)**, React, TypeScript ve Tailwind CSS teknolojileri kullanılarak tasarlanmıştır.
 
-![Özcan Ambalaj Cover](https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=1920&auto=format&fit=crop)
-
 ## 🚀 Özellikler
 
 *   **Next.js App Router:** Gelişmiş yönlendirme ve Server Side Rendering (SSR) desteği.
