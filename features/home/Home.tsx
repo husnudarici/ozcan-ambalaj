@@ -1,10 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
 import Section from '@/components/Section';
-import { STATS, PRODUCTS } from '@/constants';
+import { STATS } from '@/constants';
+import { PRODUCT_CATALOG } from '@/data/products';
 
 const Home: React.FC = () => {
-  const featuredProducts = PRODUCTS.slice(0, 4);
+  const featuredProducts = PRODUCT_CATALOG.slice(0, 4);
+  const tagTextStyles: Record<string, string> = {
+    blue: "text-blue-600",
+    green: "text-green-600",
+    orange: "text-orange-600",
+    red: "text-red-600",
+    purple: "text-purple-600",
+    yellow: "text-yellow-600",
+    gray: "text-gray-600",
+  };
 
   return (
     <>
@@ -45,8 +55,16 @@ const Home: React.FC = () => {
           <h2 className="text-secondary text-3xl md:text-4xl font-bold leading-tight mb-6">
             Çeyrek Asırlık Tecrübe, Geleceğe Yönelik Vizyon
           </h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-5">
+            Özcan Ambalaj, İstanbul Sultangazi’de oluklu mukavva ve karton kutu üretimi alanında faaliyet gösteren bir ambalaj firmasıdır. İhtiyaca özel ölçülerde ürettiğimiz oluklu mukavva kutular ile ürünlerin taşınması, depolanması ve sevkiyatı için güvenilir ambalaj çözümleri sunuyoruz.
+          </p>
+
+          <p className="text-gray-600 text-lg leading-relaxed mb-5">
+            Kaliteli hammadde kullanımı, düzenli üretim süreci ve zamanında teslimat anlayışımız sayesinde, küçük ve orta ölçekli işletmelerin ambalaj ihtiyaçlarına pratik ve ekonomik çözümler üretmeyi amaçlıyoruz.
+          </p>
+
           <p className="text-gray-600 text-lg leading-relaxed">
-            Özcan Ambalaj olarak, oluklu mukavva ve kutu üretiminde sektörün öncülerindeniz. Bursa'daki modern tesislerimizde, doğaya saygılı üretim anlayışımız ve müşteri odaklı yaklaşımımızla, ürünlerinizi en güvenli şekilde taşıyacak çözümler üretiyoruz.
+            İstanbul içi hızlı üretim ve teslimat avantajımız ile; e-ticaret, üretim ve lojistik alanlarında faaliyet gösteren firmalara oluklu mukavva kutu, özel kesim karton kutu ve baskılı ambalaj çözümleri sunmaktayız.
           </p>
         </div>
       </Section>
@@ -123,21 +141,21 @@ const Home: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
-             <Link key={product.id} href="/urunler" className="group flex flex-col gap-3">
+             <Link key={product.slug} href={`/urunler/${product.slug}`} className="group flex flex-col gap-3">
               <div className="w-full aspect-square rounded-xl bg-white border border-gray-200 overflow-hidden relative shadow-sm group-hover:shadow-md transition-all">
                 <div 
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" 
                   style={{ backgroundImage: `url('${product.image}')` }}
                 ></div>
                 {product.tag && (
-                  <div className={`absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded bg-white/90 backdrop-blur-sm shadow-sm text-${product.tagColor}-600`}>
+                  <div className={`absolute top-3 left-3 text-xs font-bold px-2 py-1 rounded bg-white/90 backdrop-blur-sm shadow-sm ${tagTextStyles[product.tagColor || "blue"]}`}>
                     {product.tag}
                   </div>
                 )}
               </div>
               <div>
                 <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{product.title}</h3>
-                <p className="text-gray-500 text-sm line-clamp-1">{product.description}</p>
+                <p className="text-gray-500 text-sm line-clamp-1">{product.summary}</p>
               </div>
             </Link>
           ))}
