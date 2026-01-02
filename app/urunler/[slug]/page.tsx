@@ -130,13 +130,14 @@ export default function ProductDetailPage({ params }: PageProps) {
               </p>
             </div>
           </div>
-          <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-lg bg-gray-100 aspect-square">
+          <div className="rounded-2xl border border-gray-200 shadow-lg bg-gray-100 aspect-square overflow-hidden">
             <Image
               src={product.image}
               alt={product.title}
-              fill
+              width={1200}
+              height={1200}
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
