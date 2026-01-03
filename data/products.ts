@@ -6,6 +6,20 @@ export type ProductDetail = {
   overview: string;
   image: string;
   minOrder?: string;
+  lowPrice?: number;
+  highPrice?: number;
+  offerCount?: number;
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount?: number;
+    ratingCount?: number;
+  };
+  reviews?: {
+    author: string;
+    datePublished: string;
+    reviewBody: string;
+    ratingValue: number;
+  }[];
   tag?: string;
   tagColor?: "blue" | "green" | "orange" | "red" | "purple" | "yellow" | "gray";
   seo: {

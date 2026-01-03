@@ -80,6 +80,11 @@ export default function ProductDetailPage({ params }: PageProps) {
         image={product.image}
         url={`https://www.ozcanambalaj.com/urunler/${params.slug}`}
         category={product.category}
+        lowPrice={product.lowPrice}
+        highPrice={product.highPrice}
+        offerCount={product.offerCount}
+        aggregateRating={product.aggregateRating}
+        reviews={product.reviews}
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 

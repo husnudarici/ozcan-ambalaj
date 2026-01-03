@@ -82,16 +82,67 @@ export function LocalBusinessSchema() {
   );
 }
 
+type AggregateRatingInput = {
+  ratingValue: number;
+  reviewCount?: number;
+  ratingCount?: number;
+};
+
+type ReviewInput = {
+  author: string;
+  datePublished: string;
+  reviewBody: string;
+  ratingValue: number;
+};
+
 interface ProductSchemaProps {
   name: string;
   description: string;
   image: string;
   url: string;
   category: string;
+  lowPrice?: number;
+  highPrice?: number;
+  offerCount?: number;
+  aggregateRating?: AggregateRatingInput;
+  reviews?: ReviewInput[];
 }
 
-export function ProductSchema({ name, description, image, url, category }: ProductSchemaProps) {
-  const schema = {
+export function ProductSchema({
+  name,
+  description,
+  image,
+  url,
+  category,
+  lowPrice,
+  highPrice,
+  offerCount,
+  aggregateRating,
+  reviews
+}: ProductSchemaProps) {
+  const offers: Record<string, unknown> = {
+    "@type": "AggregateOffer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "TRY",
+    "seller": {
+      "@type": "Organization",
+      "name": "Į-zcan Ambalaj"
+    }
+  };
+
+  if (typeof lowPrice === "number") {
+    offers.lowPrice = lowPrice;
+  }
+
+  if (typeof highPrice === "number") {
+    offers.highPrice = highPrice;
+  }
+
+  if (typeof offerCount === "number") {
+    offers.offerCount = offerCount;
+  }
+
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": name,
@@ -103,16 +154,41 @@ export function ProductSchema({ name, description, image, url, category }: Produ
       "name": "Özcan Ambalaj"
     },
     "category": category,
-    "offers": {
-      "@type": "AggregateOffer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "TRY",
-      "seller": {
-        "@type": "Organization",
-        "name": "Özcan Ambalaj"
-      }
-    }
+    "offers": offers
   };
+
+  if (aggregateRating) {
+    const rating: Record<string, unknown> = {
+      "@type": "AggregateRating",
+      "ratingValue": aggregateRating.ratingValue
+    };
+
+    if (typeof aggregateRating.reviewCount === "number") {
+      rating.reviewCount = aggregateRating.reviewCount;
+    }
+
+    if (typeof aggregateRating.ratingCount === "number") {
+      rating.ratingCount = aggregateRating.ratingCount;
+    }
+
+    schema.aggregateRating = rating;
+  }
+
+  if (reviews && reviews.length > 0) {
+    schema.review = reviews.map((review) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.author
+      },
+      "datePublished": review.datePublished,
+      "reviewBody": review.reviewBody,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.ratingValue
+      }
+    }));
+  }
 
   return (
     <Script
